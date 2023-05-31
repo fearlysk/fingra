@@ -1,0 +1,29 @@
+.wrapper {
+    height: 150px;
+    width: 100%;
+    background-color: #FCB042;
+    margin-top: -1px;
+}
+.footer {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+    font-family: 'Open Sans', serif;
+}
+.footer__item:nth-child(1) {
+    font-weight: 600;
+    font-size: 24px;
+}
+.footer__item:nth-child(2) {
+    display: flex;
+}
+.footer__item:nth-child(2) > div {
+    margin: 0 9px;
+}
+@media screen and (max-width: 478px) {
+    .footer {
+        flex-direction: column;
+        
+    }
+}

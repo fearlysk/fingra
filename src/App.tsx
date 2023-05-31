@@ -1,24 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom"
+import Home from "./pages/Home/Home";
+import Qna from "./pages/Qna/Qna";
+import Quotes from "./pages/Quotes/Quotes";
+import Facts from "./pages/Facts/Facts";
+import Articles from './pages/Articles/Articles';
+import Kids from './pages/Kids/Kids';
+import styles from "./App.module.scss";
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import routes from './constants/routes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.wrapper}>
+      <Header />
+      <div className={styles.container}>
+        <Routes>
+          <Route path={routes.HOME} element={<Home />} />
+          <Route path={routes.QNA} element={<Qna />} />
+          <Route path={routes.ARTICLES} element={<Articles />} />
+          <Route path={routes.FACTS} element={<Facts />} />
+          <Route path={routes.KIDS} element={<Kids />} />
+          <Route path={routes.QUOTES} element={<Quotes />} />
+        </Routes>
+      </div>
+      <div className={styles.footer}>
+        <Footer />
+      </div>
     </div>
   );
 }
